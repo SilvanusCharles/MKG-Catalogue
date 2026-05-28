@@ -21,7 +21,7 @@ export const Route = createFileRoute("/products")({
   component: ProductsPage,
 });
 
-const products = productsData as Product[];
+const products = productsData as unknown as Product[];
 
 function ProductsPage() {
   const { category } = Route.useSearch();
