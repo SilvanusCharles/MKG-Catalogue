@@ -1,0 +1,297 @@
+[
+  {
+    "id": "arm-001",
+    "name": "4-Core Armoured Cable 2.5mm²",
+    "category": "Armoured Cable",
+    "description": "Heavy-duty steel wire armoured (SWA) cable designed for underground and outdoor power distribution. Provides mechanical protection against impact and rodent damage. Ideal for industrial installations, street lighting, and main supply runs.",
+    "image": "armoured-1",
+    "specs": {
+      "Size / Gauge": "2.5mm²",
+      "Cores": "4",
+      "Voltage Rating": "600/1000V",
+      "Insulation": "XLPE",
+      "Sheath": "PVC with SWA armour",
+      "Standard": "IEC 60502-1",
+      "Origin": "Turkey",
+      "Available Lengths": "100m, 500m, 1000m drums"
+    }
+  },
+  {
+    "id": "arm-002",
+    "name": "4-Core Armoured Cable 10mm²",
+    "category": "Armoured Cable",
+    "description": "Robust SWA cable suitable for sub-main distribution in commercial and industrial buildings. Combines XLPE insulation with galvanised steel wire armour for long-term durability in harsh environments.",
+    "image": "armoured-2",
+    "specs": {
+      "Size / Gauge": "10mm²",
+      "Cores": "4",
+      "Voltage Rating": "600/1000V",
+      "Insulation": "XLPE",
+      "Sheath": "PVC with SWA armour",
+      "Standard": "IEC 60502-1 / BS 5467",
+      "Origin": "Turkey",
+      "Available Lengths": "100m, 500m drums"
+    }
+  },
+  {
+    "id": "arm-003",
+    "name": "Single Core Armoured Cable 16mm²",
+    "category": "Armoured Cable",
+    "description": "Single core armoured cable for heavy current applications such as transformer connections, generator feeders, and main incoming supply lines.",
+    "image": "armoured-3",
+    "specs": {
+      "Size / Gauge": "16mm²",
+      "Cores": "1",
+      "Voltage Rating": "600/1000V",
+      "Insulation": "XLPE",
+      "Sheath": "PVC, AWA aluminium armour",
+      "Standard": "IEC 60502-1",
+      "Origin": "Turkey",
+      "Available Lengths": "500m, 1000m drums"
+    }
+  },
+  {
+    "id": "pvc-001",
+    "name": "Single Core PVC Cable 1.5mm²",
+    "category": "PVC Cable",
+    "description": "Solid copper conductor with PVC insulation for general purpose wiring in conduit and trunking. Suitable for lighting circuits, control panels, and signalling.",
+    "image": "pvc-1",
+    "specs": {
+      "Size / Gauge": "1.5mm²",
+      "Conductor": "Solid copper",
+      "Voltage Rating": "450/750V",
+      "Insulation": "PVC",
+      "Colours Available": "Red, Black, Blue, Yellow, Green/Yellow",
+      "Standard": "IEC 60227 / BS 6004",
+      "Origin": "Turkey",
+      "Available Lengths": "100m coils"
+    }
+  },
+  {
+    "id": "pvc-002",
+    "name": "Single Core PVC Cable 2.5mm²",
+    "category": "PVC Cable",
+    "description": "Most commonly used PVC insulated cable for socket outlet rings and small power circuits in residential and commercial buildings.",
+    "image": "pvc-2",
+    "specs": {
+      "Size / Gauge": "2.5mm²",
+      "Conductor": "Stranded copper",
+      "Voltage Rating": "450/750V",
+      "Insulation": "PVC",
+      "Colours Available": "Red, Black, Blue, Yellow, Green/Yellow",
+      "Standard": "IEC 60227",
+      "Origin": "Turkey",
+      "Available Lengths": "100m coils"
+    }
+  },
+  {
+    "id": "pvc-003",
+    "name": "Single Core PVC Cable 6mm²",
+    "category": "PVC Cable",
+    "description": "Heavier gauge PVC cable for cooker circuits, water heaters, and sub-main feeds. Stranded copper conductor for ease of installation.",
+    "image": "pvc-3",
+    "specs": {
+      "Size / Gauge": "6mm²",
+      "Conductor": "Stranded copper",
+      "Voltage Rating": "450/750V",
+      "Insulation": "PVC",
+      "Colours Available": "Red, Black, Blue, Green/Yellow",
+      "Standard": "IEC 60227",
+      "Origin": "Turkey",
+      "Available Lengths": "100m coils"
+    }
+  },
+  {
+    "id": "flex-001",
+    "name": "3-Core Flexible Cable 1.5mm²",
+    "category": "Flexible Cable",
+    "description": "Highly flexible PVC insulated and sheathed cable for portable appliances, extension leads, and equipment with frequent movement.",
+    "image": "flex-1",
+    "specs": {
+      "Size / Gauge": "1.5mm²",
+      "Cores": "3 (L, N, E)",
+      "Voltage Rating": "300/500V",
+      "Insulation": "PVC",
+      "Sheath": "PVC, flexible",
+      "Standard": "IEC 60227-5 (H05VV-F)",
+      "Origin": "Turkey",
+      "Available Lengths": "100m coils"
+    }
+  },
+  {
+    "id": "flex-002",
+    "name": "2-Core Flexible Cable 2.5mm²",
+    "category": "Flexible Cable",
+    "description": "Two-core flexible cable for power tools, pumps, and double-insulated appliances. Fine stranded copper for maximum flexibility.",
+    "image": "flex-2",
+    "specs": {
+      "Size / Gauge": "2.5mm²",
+      "Cores": "2",
+      "Voltage Rating": "300/500V",
+      "Insulation": "PVC",
+      "Sheath": "PVC, flexible",
+      "Standard": "IEC 60227-5",
+      "Origin": "Turkey",
+      "Available Lengths": "100m coils"
+    }
+  },
+  {
+    "id": "flex-003",
+    "name": "4-Core Flexible Cable 4mm²",
+    "category": "Flexible Cable",
+    "description": "Heavy duty 4-core flexible cable for three-phase portable equipment, welding sets, and temporary site power distribution.",
+    "image": "flex-3",
+    "specs": {
+      "Size / Gauge": "4mm²",
+      "Cores": "4",
+      "Voltage Rating": "450/750V",
+      "Insulation": "PVC",
+      "Sheath": "Heavy PVC, oil resistant",
+      "Standard": "IEC 60227-5 (H07VV-F)",
+      "Origin": "Turkey",
+      "Available Lengths": "100m coils"
+    }
+  },
+  {
+    "id": "con-001",
+    "name": "PVC Conduit Pipe 20mm",
+    "category": "Conduit",
+    "description": "Rigid PVC electrical conduit for surface and concealed wiring installations. Halogen-free, impact resistant, and easy to bend with heat.",
+    "image": "conduit-1",
+    "specs": {
+      "Size": "20mm diameter",
+      "Length": "3m per piece",
+      "Material": "uPVC",
+      "Colour": "White / Grey",
+      "Impact Rating": "Medium duty",
+      "Standard": "IEC 61386",
+      "Origin": "Turkey",
+      "Available Lengths": "3m sticks, sold per bundle of 20"
+    }
+  },
+  {
+    "id": "con-002",
+    "name": "PVC Conduit Pipe 25mm",
+    "category": "Conduit",
+    "description": "Heavy gauge 25mm PVC conduit for larger cable runs in commercial and industrial installations. UV stabilised for outdoor use.",
+    "image": "conduit-2",
+    "specs": {
+      "Size": "25mm diameter",
+      "Length": "3m per piece",
+      "Material": "uPVC",
+      "Colour": "White / Grey",
+      "Impact Rating": "Heavy duty",
+      "Standard": "IEC 61386",
+      "Origin": "Turkey",
+      "Available Lengths": "3m sticks, bundle of 20"
+    }
+  },
+  {
+    "id": "con-003",
+    "name": "Flexible Conduit 25mm",
+    "category": "Conduit",
+    "description": "Corrugated flexible conduit for protecting cables in tight bends and around machinery. Resistant to crushing and abrasion.",
+    "image": "conduit-3",
+    "specs": {
+      "Size": "25mm diameter",
+      "Length": "50m roll",
+      "Material": "PVC with steel reinforcement",
+      "Colour": "Black",
+      "Standard": "IEC 61386-23",
+      "Origin": "Turkey",
+      "Available Lengths": "25m, 50m rolls"
+    }
+  },
+  {
+    "id": "pip-001",
+    "name": "GI Pipe 20mm",
+    "category": "Pipes",
+    "description": "Galvanised iron pipe for heavy-duty electrical installations requiring maximum mechanical protection. Threaded ends for screw connections.",
+    "image": "pipe-1",
+    "specs": {
+      "Size": "20mm (3/4\")",
+      "Length": "3m",
+      "Material": "Galvanised steel",
+      "Wall Thickness": "1.6mm",
+      "Standard": "BS 1387",
+      "Origin": "Turkey",
+      "Available Lengths": "3m, 6m"
+    }
+  },
+  {
+    "id": "pip-002",
+    "name": "PVC Pressure Pipe 32mm",
+    "category": "Pipes",
+    "description": "High-pressure PVC pipe suitable for underground cable ducting and water service applications.",
+    "image": "pipe-2",
+    "specs": {
+      "Size": "32mm diameter",
+      "Length": "6m",
+      "Material": "uPVC",
+      "Pressure Rating": "PN10",
+      "Standard": "ISO 1452",
+      "Origin": "Turkey",
+      "Available Lengths": "3m, 6m"
+    }
+  },
+  {
+    "id": "pip-003",
+    "name": "HDPE Cable Duct 50mm",
+    "category": "Pipes",
+    "description": "High density polyethylene duct for underground cable protection. Flexible, corrosion-proof, and supplied in long continuous coils.",
+    "image": "pipe-3",
+    "specs": {
+      "Size": "50mm diameter",
+      "Material": "HDPE",
+      "Colour": "Black with red stripe",
+      "Standard": "EN 12201",
+      "Origin": "Turkey",
+      "Available Lengths": "50m, 100m coils"
+    }
+  },
+  {
+    "id": "ear-001",
+    "name": "Copper Earth Rod 5/8\" x 4ft",
+    "category": "Earthing Materials",
+    "description": "Solid copper-bonded steel earth rod for grounding electrical installations. Provides reliable low-resistance earth connection.",
+    "image": "earth-1",
+    "specs": {
+      "Diameter": "5/8\" (16mm)",
+      "Length": "4ft (1.2m)",
+      "Material": "Copper-bonded steel",
+      "Copper Coating": "254 microns",
+      "Standard": "BS EN 62561",
+      "Origin": "Turkey",
+      "Available Lengths": "4ft, 6ft, 8ft"
+    }
+  },
+  {
+    "id": "ear-002",
+    "name": "Bare Copper Earth Wire 16mm²",
+    "category": "Earthing Materials",
+    "description": "Bare stranded copper conductor for earthing and bonding applications. High conductivity for effective fault current dissipation.",
+    "image": "earth-2",
+    "specs": {
+      "Size / Gauge": "16mm²",
+      "Conductor": "Bare stranded copper",
+      "Standard": "IEC 60228 Class 2",
+      "Origin": "Turkey",
+      "Available Lengths": "100m coils"
+    }
+  },
+  {
+    "id": "ear-003",
+    "name": "Earth Clamp & Inspection Pit",
+    "category": "Earthing Materials",
+    "description": "Brass earth clamp with inspection housing for connecting earth conductor to earth rod. Includes weatherproof inspection chamber.",
+    "image": "earth-3",
+    "specs": {
+      "Clamp Size": "Suits 5/8\" rod",
+      "Material": "Brass body, stainless steel bolts",
+      "Pit Material": "uPVC, lockable lid",
+      "Standard": "BS EN 62561-1",
+      "Origin": "Turkey",
+      "Available Sizes": "Standard, Heavy duty"
+    }
+  }
+]
