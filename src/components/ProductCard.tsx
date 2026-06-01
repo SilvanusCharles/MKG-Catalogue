@@ -1,4 +1,4 @@
-import { CategoryIcon } from "./CategoryIcon";
+import { ProductImage } from "./ProductImage";
 import type { Product } from "@/lib/catalogue";
 
 export function ProductCard({ product, onView }: { product: Product; onView: (p: Product) => void }) {
@@ -6,9 +6,8 @@ export function ProductCard({ product, onView }: { product: Product; onView: (p:
   return (
     <article className="group bg-card border border-border hover:border-[color:var(--brand-red)] transition-colors flex flex-col">
       <div className="aspect-square bg-[color:var(--brand-black)] relative overflow-hidden flex items-center justify-center">
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "repeating-linear-gradient(45deg, white 0 1px, transparent 1px 12px)" }} />
-        <CategoryIcon category={product.category} size={72} className="text-[color:var(--brand-red)] relative z-10" />
-        <span className="absolute top-3 left-3 bg-[color:var(--brand-red)] text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1">
+        <ProductImage product={product} size={72} />
+        <span className="absolute top-3 left-3 z-10 bg-[color:var(--brand-red)] text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1">
           {product.category}
         </span>
       </div>
