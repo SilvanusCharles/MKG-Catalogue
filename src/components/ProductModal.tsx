@@ -33,9 +33,8 @@ export function ProductModal({ product, onClose }: { product: Product | null; on
         </button>
 
         <div className="grid md:grid-cols-2">
-          <div className="aspect-square bg-[color:var(--brand-black)] relative flex items-center justify-center">
-            <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "repeating-linear-gradient(45deg, white 0 1px, transparent 1px 14px)" }} />
-            <CategoryIcon category={product.category} size={140} className="text-[color:var(--brand-red)] relative z-10" />
+          <div className="aspect-square bg-[color:var(--brand-black)] relative flex items-center justify-center overflow-hidden">
+            <ProductImage product={product} size={140} />
           </div>
 
           <div className="p-6 md:p-8">
