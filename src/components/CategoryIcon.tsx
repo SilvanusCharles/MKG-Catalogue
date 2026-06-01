@@ -10,7 +10,7 @@ const map: Record<Category, React.ComponentType<{ size?: number; className?: str
   "Earthing Materials": Plug,
 };
 
-export function CategoryIcon({ category, size = 28, className }: { category: Category; size?: number; className?: string }) {
-  const Icon = map[category] ?? Cable;
+export function CategoryIcon({ category, size = 28, className }: { category: Category | string; size?: number; className?: string }) {
+  const Icon = map[category as Category] ?? Cable;
   return <Icon size={size} className={className} />;
 }
