@@ -11,6 +11,7 @@ import {
 import appCss from "../styles.css?url";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { Toaster } from "@/components/ui/sonner";
 
 function NotFoundComponent() {
   return (
@@ -83,6 +84,7 @@ function RootComponent() {
         <Navbar />
         <main className="flex-1"><Outlet /></main>
         <Footer />
+        <Toaster />
       </div>
     </QueryClientProvider>
   );
