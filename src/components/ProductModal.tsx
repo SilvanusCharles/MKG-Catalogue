@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { X, Phone, MessageCircle } from "lucide-react";
 import type { Product } from "@/lib/catalogue";
 import { PHONE, whatsappLink } from "@/lib/catalogue";
-import { CategoryIcon } from "./CategoryIcon";
+import { ProductImage } from "./ProductImage";
 
 export function ProductModal({ product, onClose }: { product: Product | null; onClose: () => void }) {
   useEffect(() => {
