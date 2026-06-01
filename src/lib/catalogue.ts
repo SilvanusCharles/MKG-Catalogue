@@ -12,9 +12,9 @@ export type Category = (typeof CATEGORIES)[number];
 export interface Product {
   id: string;
   name: string;
-  category: Category;
+  category: string;
   description: string;
-  image: string;
+  image_url: string | null;
   specs: Record<string, string>;
 }
 
