@@ -84,6 +84,7 @@ function RootComponent() {
         <Navbar />
         <main className="flex-1"><Outlet /></main>
         <Footer />
+        <Toaster />
       </div>
     </QueryClientProvider>
   );
