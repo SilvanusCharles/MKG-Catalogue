@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { X, Phone, MessageCircle } from "lucide-react";
 import type { Product } from "@/lib/catalogue";
 import { PHONE, whatsappLink } from "@/lib/catalogue";
-import { ProductImage } from "./ProductImage";
+import { ProductSlideshow } from "./ProductSlideshow";
 
 export function ProductModal({ product, onClose }: { product: Product | null; onClose: () => void }) {
   useEffect(() => {
@@ -34,7 +34,7 @@ export function ProductModal({ product, onClose }: { product: Product | null; on
 
         <div className="grid md:grid-cols-2">
           <div className="aspect-square bg-[color:var(--brand-black)] relative flex items-center justify-center overflow-hidden">
-            <ProductImage product={product} size={140} />
+            <ProductSlideshow product={product} size={140} autoPlay />
           </div>
 
           <div className="p-6 md:p-8">
