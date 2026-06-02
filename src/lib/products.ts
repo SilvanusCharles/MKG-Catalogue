@@ -9,6 +9,7 @@ type Row = {
   category: string;
   description: string;
   image_url: string | null;
+  image_urls: string[] | null;
   specs: unknown;
   sort_order: number;
 };
@@ -19,8 +20,19 @@ const rowToProduct = (r: Row): Product => ({
   category: r.category,
   description: r.description,
   image_url: r.image_url,
+  image_urls: Array.isArray(r.image_urls) ? r.image_urls : [],
   specs: (r.specs && typeof r.specs === "object" ? (r.specs as Record<string, string>) : {}),
 });
+
+export async function fetchProducts(): Promise<Product[]> {
+  const { data, error } = await supabase
+    .from("products")
+    .select("id, name, category, description, image_url, image_urls, specs, sort_order")
+    .order("sort_order", { ascending: true })
+    .order("created_at", { ascending: true });
+  if (error) throw error;
+  return (data as unknown as Row[]).map(rowToProduct);
+}
 
 export async function fetchProducts(): Promise<Product[]> {
   const { data, error } = await supabase
