@@ -461,37 +461,68 @@ function ProductEditor({
             />
           </Field>
 
-          <Field label="Image">
-            <div className="flex flex-col sm:flex-row items-start gap-4">
-              <div className="w-32 h-32 bg-[color:var(--brand-black)] relative overflow-hidden border border-border shrink-0">
-                <ProductImage product={{ name: form.name, category: form.category, image_url: form.image_url }} size={48} />
-              </div>
-              <div className="flex-1 space-y-2">
-                <label className={`inline-flex items-center gap-2 bg-[color:var(--brand-black)] hover:bg-black text-white px-4 py-2.5 text-sm font-bold uppercase tracking-wider cursor-pointer ${uploading ? "opacity-50 pointer-events-none" : ""}`}>
-                  {uploading ? <Loader2 size={14} className="animate-spin" /> : <Upload size={14} />}
-                  {uploading ? "Uploading…" : "Choose Image from Device"}
-                  <input
-                    type="file"
-                    accept="image/*"
-                    className="hidden"
-                    onChange={(e) => {
-                      const f = e.target.files?.[0];
-                      if (f) handleFile(f);
-                      e.target.value = "";
-                    }}
-                  />
-                </label>
-                {form.image_url && (
-                  <button
-                    type="button"
-                    onClick={clearImage}
-                    className="ml-2 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-[color:var(--brand-red)] hover:underline"
-                  >
-                    <Trash2 size={12} /> Remove
-                  </button>
-                )}
-                <p className="text-xs text-muted-foreground">JPG, PNG or WebP — up to 5 MB. Leave blank to show a category icon.</p>
-              </div>
+          <Field label="Images (Slideshow)">
+            <div className="space-y-3">
+              <label className={`inline-flex items-center gap-2 bg-[color:var(--brand-black)] hover:bg-black text-white px-4 py-2.5 text-sm font-bold uppercase tracking-wider cursor-pointer ${uploading ? "opacity-50 pointer-events-none" : ""}`}>
+                {uploading ? <Loader2 size={14} className="animate-spin" /> : <Upload size={14} />}
+                {uploading ? "Uploading…" : "Add Images from Device"}
+                <input
+                  type="file"
+                  accept="image/*"
+                  multiple
+                  className="hidden"
+                  onChange={(e) => {
+                    if (e.target.files && e.target.files.length) handleFiles(e.target.files);
+                    e.target.value = "";
+                  }}
+                />
+              </label>
+              <p className="text-xs text-muted-foreground">
+                Add one or more images — JPG, PNG or WebP, up to 5 MB each. The first image is the cover; drag the arrows to reorder. Leave blank to show a category icon.
+              </p>
+
+              {form.images.length === 0 ? (
+                <div className="w-32 h-32 bg-[color:var(--brand-black)] relative overflow-hidden border border-border flex items-center justify-center">
+                  <ProductImage product={{ name: form.name, category: form.category, image_url: null }} size={48} />
+                </div>
+              ) : (
+                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                  {form.images.map((url, i) => (
+                    <li key={url + i} className="relative group border border-border bg-[color:var(--brand-black)]">
+                      <img src={url} alt="" className="w-full aspect-square object-cover" />
+                      {i === 0 && (
+                        <span className="absolute top-1 left-1 bg-[color:var(--brand-red)] text-white text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5">Cover</span>
+                      )}
+                      <div className="absolute inset-x-0 bottom-0 bg-black/70 flex items-center justify-between px-1 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div className="flex gap-1">
+                          <button
+                            type="button"
+                            disabled={i === 0}
+                            onClick={() => moveImage(i, -1)}
+                            className="text-white text-xs px-1.5 py-0.5 hover:bg-white/20 disabled:opacity-30"
+                            aria-label="Move left"
+                          >‹</button>
+                          <button
+                            type="button"
+                            disabled={i === form.images.length - 1}
+                            onClick={() => moveImage(i, 1)}
+                            className="text-white text-xs px-1.5 py-0.5 hover:bg-white/20 disabled:opacity-30"
+                            aria-label="Move right"
+                          >›</button>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => removeImage(i)}
+                          className="text-white hover:text-[color:var(--brand-red)] px-1"
+                          aria-label="Remove image"
+                        >
+                          <Trash2 size={12} />
+                        </button>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </Field>
 
