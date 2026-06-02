@@ -340,23 +340,30 @@ function ProductEditor({
     };
   }, [onClose]);
 
-  const handleFile = async (file: File) => {
-    if (!file) return;
-    if (file.size > 5 * 1024 * 1024) {
-      toast.error("Image must be under 5 MB");
-      return;
-    }
+  const handleFiles = async (files: FileList) => {
+    const arr = Array.from(files);
+    if (!arr.length) return;
     setUploading(true);
     try {
-      const ext = file.name.split(".").pop() || "jpg";
-      const path = `products/${crypto.randomUUID()}.${ext}`;
-      const { error } = await supabase.storage
-        .from("product-images")
-        .upload(path, file, { cacheControl: "3600", upsert: false, contentType: file.type });
-      if (error) throw error;
-      const { data } = supabase.storage.from("product-images").getPublicUrl(path);
-      setForm((f) => ({ ...f, image_url: data.publicUrl }));
-      toast.success("Image uploaded");
+      const uploaded: string[] = [];
+      for (const file of arr) {
+        if (file.size > 5 * 1024 * 1024) {
+          toast.error(`${file.name} is over 5 MB — skipped`);
+          continue;
+        }
+        const ext = file.name.split(".").pop() || "jpg";
+        const path = `products/${crypto.randomUUID()}.${ext}`;
+        const { error } = await supabase.storage
+          .from("product-images")
+          .upload(path, file, { cacheControl: "3600", upsert: false, contentType: file.type });
+        if (error) throw error;
+        const { data } = supabase.storage.from("product-images").getPublicUrl(path);
+        uploaded.push(data.publicUrl);
+      }
+      if (uploaded.length) {
+        setForm((f) => ({ ...f, images: [...f.images, ...uploaded] }));
+        toast.success(`${uploaded.length} image${uploaded.length > 1 ? "s" : ""} uploaded`);
+      }
     } catch (err) {
       toast.error((err as Error).message);
     } finally {
@@ -364,7 +371,17 @@ function ProductEditor({
     }
   };
 
-  const clearImage = () => setForm((f) => ({ ...f, image_url: null }));
+  const removeImage = (i: number) =>
+    setForm((f) => ({ ...f, images: f.images.filter((_, idx) => idx !== i) }));
+
+  const moveImage = (i: number, dir: -1 | 1) =>
+    setForm((f) => {
+      const j = i + dir;
+      if (j < 0 || j >= f.images.length) return f;
+      const next = [...f.images];
+      [next[i], next[j]] = [next[j], next[i]];
+      return { ...f, images: next };
+    });
 
   const save = async (e: FormEvent) => {
     e.preventDefault();
@@ -374,7 +391,8 @@ function ProductEditor({
         name: form.name.trim(),
         category: form.category,
         description: form.description.trim(),
-        image_url: form.image_url,
+        image_url: form.images[0] ?? null,
+        image_urls: form.images,
         specs: textToSpecs(form.specsText),
       };
       if (!payload.name) throw new Error("Name is required");
