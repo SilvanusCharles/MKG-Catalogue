@@ -15,7 +15,15 @@ export interface Product {
   category: string;
   description: string;
   image_url: string | null;
+  image_urls: string[];
   specs: Record<string, string>;
+}
+
+/** Combined ordered list of all images for a product (legacy single first, then gallery). */
+export function productImages(p: Pick<Product, "image_url" | "image_urls">): string[] {
+  const list = [...(p.image_urls ?? [])];
+  if (p.image_url && !list.includes(p.image_url)) list.unshift(p.image_url);
+  return list;
 }
 
 export const PHONE = "+2348033009217";
