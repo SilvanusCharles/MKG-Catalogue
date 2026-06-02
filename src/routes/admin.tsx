@@ -147,7 +147,7 @@ type ProductDraft = {
   name: string;
   category: string;
   description: string;
-  image_url: string | null;
+  images: string[]; // gallery; first item is the primary image
   specsText: string; // key: value per line
 };
 
@@ -155,7 +155,7 @@ const emptyDraft: ProductDraft = {
   name: "",
   category: CATEGORIES[0],
   description: "",
-  image_url: null,
+  images: [],
   specsText: "",
 };
 
@@ -189,15 +189,18 @@ function AdminDashboard() {
   );
 
   const startNew = () => setEditing({ ...emptyDraft });
-  const startEdit = (p: Product) =>
+  const startEdit = (p: Product) => {
+    const combined = [...(p.image_urls ?? [])];
+    if (p.image_url && !combined.includes(p.image_url)) combined.unshift(p.image_url);
     setEditing({
       id: p.id,
       name: p.name,
       category: p.category,
       description: p.description,
-      image_url: p.image_url,
+      images: combined,
       specsText: specsToText(p.specs),
     });
+  };
 
   const handleDelete = async (p: Product) => {
     if (!confirm(`Delete "${p.name}"?`)) return;
@@ -206,11 +209,11 @@ function AdminDashboard() {
       toast.error(error.message);
       return;
     }
-    // Best-effort: also remove image from storage if it's ours
-    if (p.image_url) {
-      const path = extractStoragePath(p.image_url);
-      if (path) await supabase.storage.from("product-images").remove([path]);
-    }
+    // Best-effort: remove any images we own from storage
+    const all = [...(p.image_urls ?? [])];
+    if (p.image_url) all.push(p.image_url);
+    const paths = all.map(extractStoragePath).filter((x): x is string => !!x);
+    if (paths.length) await supabase.storage.from("product-images").remove(paths);
     toast.success("Product deleted");
     refetch();
   };
