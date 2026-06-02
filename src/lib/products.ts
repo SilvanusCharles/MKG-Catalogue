@@ -34,15 +34,6 @@ export async function fetchProducts(): Promise<Product[]> {
   return (data as unknown as Row[]).map(rowToProduct);
 }
 
-export async function fetchProducts(): Promise<Product[]> {
-  const { data, error } = await supabase
-    .from("products")
-    .select("id, name, category, description, image_url, specs, sort_order")
-    .order("sort_order", { ascending: true })
-    .order("created_at", { ascending: true });
-  if (error) throw error;
-  return (data as Row[]).map(rowToProduct);
-}
 
 export function useProducts() {
   const qc = useQueryClient();
