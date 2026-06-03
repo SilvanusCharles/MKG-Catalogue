@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Phone, Ship, Package, ShieldCheck } from "lucide-react";
+import { ArrowRight, Phone, Factory, Package, ShieldCheck } from "lucide-react";
 import { CATEGORIES } from "@/lib/catalogue";
 import { CategoryIcon } from "@/components/CategoryIcon";
 
