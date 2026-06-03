@@ -23,7 +23,7 @@ function Home() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-32">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 border border-white/20 px-3 py-1 text-xs font-bold uppercase tracking-widest">
-              <span className="w-2 h-2 bg-[color:var(--brand-red)]" /> Lagos · Nigeria
+              <span className="w-2 h-2 bg-[color:var(--brand-red)]" /> Lagos Island · Nigeria
             </div>
             <h1 className="mt-6 font-display font-black text-5xl sm:text-6xl md:text-7xl leading-[0.95] uppercase">
               Premium Cables<br />
