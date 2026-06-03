@@ -47,7 +47,7 @@ function About() {
       <section className="bg-muted">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 grid sm:grid-cols-3 gap-6">
           {[
-            { icon: MapPin, t: "Based in Lagos", d: "Serving contractors across Nigeria" },
+            { icon: MapPin, t: "Lagos Island HQ", d: "185 Adeniji Adele Rd, beside Wema Bank" },
             { icon: Factory, t: "Made in Turkey", d: "International quality standards" },
             { icon: Users, t: "B2B Focused", d: "Bulk orders & trade pricing" },
           ].map(({ icon: Icon, t, d }) => (
