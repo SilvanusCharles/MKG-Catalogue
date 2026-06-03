@@ -46,7 +46,7 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 text-xs text-white/50 flex justify-between">
           <span>© {new Date().getFullYear()} MKG Kabel. All rights reserved.</span>
-          <span>Lagos, Nigeria</span>
+          <span>185 Adeniji Adele Rd, Lagos Island, Lagos</span>
         </div>
       </div>
     </footer>
