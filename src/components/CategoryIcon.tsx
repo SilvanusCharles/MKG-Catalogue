@@ -3,7 +3,7 @@ import type { Category } from "@/lib/catalogue";
 
 const map: Record<Category, React.ComponentType<{ size?: number; className?: string }>> = {
   "Armoured Cable": Cable,
-  "PVC Cable": Zap,
+  "PVC/PVC Cable": Zap,
   "Flexible Cable": Waves,
   "Conduit": CircleDashed,
   "Pipes": Pipette,

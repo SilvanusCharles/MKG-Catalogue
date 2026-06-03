@@ -15,7 +15,7 @@ export const Route = createFileRoute("/products")({
   head: () => ({
     meta: [
       { title: "Products — MKG Kabel Catalogue" },
-      { name: "description", content: "Browse the full MKG Kabel catalogue — armoured cable, PVC, flexible cable, conduit, pipes and earthing materials." },
+      { name: "description", content: "Browse the full MKG Kabel catalogue — armoured cable, PVC/PVC, flexible cable, conduit, pipes and earthing materials." },
     ],
   }),
   component: ProductsPage,

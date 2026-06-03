@@ -1,6 +1,6 @@
 export const CATEGORIES = [
   "Armoured Cable",
-  "PVC Cable",
+  "PVC/PVC Cable",
   "Flexible Cable",
   "Conduit",
   "Pipes",
