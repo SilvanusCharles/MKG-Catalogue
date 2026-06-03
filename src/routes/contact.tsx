@@ -6,7 +6,7 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — MKG Kabel" },
-      { name: "description", content: "Contact MKG Kabel for cable orders, bulk pricing, and availability. Lagos, Nigeria." },
+      { name: "description", content: "Contact MKG Kabel for cable orders, bulk pricing, and availability. Visit us at 185 Adeniji Adele Road, beside Wema Bank, Lagos Island, Lagos." },
     ],
   }),
   component: Contact,
@@ -45,7 +45,7 @@ function Contact() {
           <div className="border border-border p-6">
             <MapPin className="text-[color:var(--brand-red)]" size={22} />
             <h3 className="mt-3 font-display font-bold uppercase">Location</h3>
-            <p className="text-sm text-muted-foreground mt-1">Lagos, Nigeria — serving contractors nationwide.</p>
+            <p className="text-sm text-muted-foreground mt-1">185 Adeniji Adele Road, beside Wema Bank, Lagos Island, Lagos — serving contractors nationwide.</p>
           </div>
           <div className="border border-border p-6">
             <Clock className="text-[color:var(--brand-red)]" size={22} />

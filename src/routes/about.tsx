@@ -32,7 +32,7 @@ function About() {
             Our products are <strong>made in Turkey</strong>, a recognised global hub for high-quality cable manufacturing. Sourcing directly from the factory ensures every cable, conduit and accessory we stock meets international quality standards — and reaches our customers at competitive bulk pricing.
           </p>
           <p>
-            Based in <strong>Lagos</strong>, we work with site teams, project managers, and bulk buyers nationwide. We don't sell hype — we sell dependable materials, with the technical specs you need to make confident decisions.
+            Based at <strong>185 Adeniji Adele Road, beside Wema Bank, Lagos Island, Lagos</strong>, we work with site teams, project managers, and bulk buyers nationwide. We don't sell hype — we sell dependable materials, with the technical specs you need to make confident decisions.
           </p>
           <div className="border-l-4 border-[color:var(--brand-red)] pl-5 my-8 bg-muted py-5">
             <h3 className="font-display font-bold uppercase tracking-wider text-sm">Sister Brand — Silver Gate</h3>
@@ -47,7 +47,7 @@ function About() {
       <section className="bg-muted">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 grid sm:grid-cols-3 gap-6">
           {[
-            { icon: MapPin, t: "Based in Lagos", d: "Serving contractors across Nigeria" },
+            { icon: MapPin, t: "Lagos Island HQ", d: "185 Adeniji Adele Rd, beside Wema Bank" },
             { icon: Factory, t: "Made in Turkey", d: "International quality standards" },
             { icon: Users, t: "B2B Focused", d: "Bulk orders & trade pricing" },
           ].map(({ icon: Icon, t, d }) => (
