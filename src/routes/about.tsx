@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { MapPin, Ship, Users } from "lucide-react";
+import { MapPin, Factory, Users } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -29,7 +29,7 @@ function About() {
             <strong>MKG Kabel</strong> is a professional electrical cable supplier serving contractors, electricians, and developers across Nigeria. From small residential jobs to large commercial projects, we provide the cables and accessories the country's tradespeople rely on every day.
           </p>
           <p>
-            Our products are imported directly from <strong>Turkey</strong>, a recognised global hub for high-quality cable manufacturing. This direct supply chain ensures every cable, conduit and accessory we stock meets international quality standards — and reaches our customers at competitive bulk pricing.
+            Our products are <strong>made in Turkey</strong>, a recognised global hub for high-quality cable manufacturing. Sourcing directly from the factory ensures every cable, conduit and accessory we stock meets international quality standards — and reaches our customers at competitive bulk pricing.
           </p>
           <p>
             Based in <strong>Lagos</strong>, we work with site teams, project managers, and bulk buyers nationwide. We don't sell hype — we sell dependable materials, with the technical specs you need to make confident decisions.
@@ -48,7 +48,7 @@ function About() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 grid sm:grid-cols-3 gap-6">
           {[
             { icon: MapPin, t: "Based in Lagos", d: "Serving contractors across Nigeria" },
-            { icon: Ship, t: "Direct from Turkey", d: "International quality standards" },
+            { icon: Factory, t: "Made in Turkey", d: "International quality standards" },
             { icon: Users, t: "B2B Focused", d: "Bulk orders & trade pricing" },
           ].map(({ icon: Icon, t, d }) => (
             <div key={t} className="bg-white p-6 border border-border">

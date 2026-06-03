@@ -9,7 +9,7 @@ export function Footer() {
         <div>
           <Logo className="text-white" />
           <p className="mt-4 text-sm text-white/70 max-w-xs">
-            Professional cable & conduit supplier. Imported directly from Turkey. Based in Lagos, Nigeria.
+            Professional cable & conduit supplier. Made in Turkey. Based in Lagos, Nigeria.
           </p>
         </div>
 

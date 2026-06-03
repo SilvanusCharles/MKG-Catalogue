@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Phone, Ship, Package, ShieldCheck } from "lucide-react";
+import { ArrowRight, Phone, Factory, Package, ShieldCheck } from "lucide-react";
 import { CATEGORIES } from "@/lib/catalogue";
 import { CategoryIcon } from "@/components/CategoryIcon";
 
@@ -7,7 +7,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "MKG Kabel — Premium Cables & Conduit, Lagos" },
-      { name: "description", content: "Premium cables & conduit solutions. Trusted by contractors across Nigeria. Imported direct from Turkey." },
+      { name: "description", content: "Premium cables & conduit solutions. Trusted by contractors across Nigeria. Made in Turkey." },
     ],
   }),
   component: Home,
@@ -30,7 +30,7 @@ function Home() {
               <span className="text-[color:var(--brand-red)]">&</span> Conduit Solutions
             </h1>
             <p className="mt-6 text-base md:text-lg text-white/70 max-w-xl">
-              Trusted by contractors and electricians across Nigeria — imported directly from Turkey.
+              Trusted by contractors and electricians across Nigeria — made in Turkey to international standards.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -54,7 +54,7 @@ function Home() {
       <section className="bg-white border-b border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
           {[
-            { icon: Ship, label: "Imported from Turkey" },
+            { icon: Factory, label: "Made in Turkey" },
             { icon: Package, label: "Bulk Orders Welcome" },
             { icon: ShieldCheck, label: "Trusted by Professionals" },
           ].map(({ icon: Icon, label }) => (
