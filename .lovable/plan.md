@@ -1,14 +1,17 @@
-Replace all "imported from Turkey" references with "Made in Turkey" and swap the Ship icon for a Factory icon.
+## Update Location to Specific Address
 
-**Text replacements:**
-- `src/routes/index.tsx` — hero tagline, meta description, feature card label
-- `src/routes/about.tsx` — origin paragraph and feature card
-- `src/routes/__root.tsx` — Open Graph and Twitter meta descriptions
-- `src/components/Footer.tsx` — footer tagline
-- `src/data/products.json` — Origin field values (consistency)
+Replace all vague "Lagos, Nigeria" / "Based in Lagos" references with the full physical address:
+**185 Adeniji Adele Road, Beside Wema Bank, Lagos Island, Lagos**
 
-**Icon replacement:**
-- `src/routes/index.tsx` — replace `Ship` with `Factory` in the feature grid
-- `src/routes/about.tsx` — replace `Ship` with `Factory` in the value proposition cards
+### Pages & Components to Update
 
-All changes are string replacements and icon imports. No functional or architectural changes.
+| File | Current Text | New Text |
+|------|-------------|----------|
+| `src/components/Footer.tsx` | "Based in Lagos, Nigeria" (tagline) + "Lagos, Nigeria" (footer bottom) | Full address in tagline; full address in footer bottom |
+| `src/routes/contact.tsx` | "Lagos, Nigeria — serving contractors nationwide" (location card) + meta description | Full address in location card; update meta |
+| `src/routes/about.tsx` | "Based in <strong>Lagos</strong>" (paragraph) + "Based in Lagos" card | Full address in paragraph; update card title to address |
+| `src/routes/index.tsx` | "Lagos · Nigeria" (hero tagline) | Full address |
+| `src/routes/__root.tsx` | "in Lagos, Nigeria" (meta descriptions) | "in Lagos Island, Lagos" or full address where it fits |
+
+### No structural or design changes
+Only text replacements. Layout, styling, and icons remain exactly as they are.
