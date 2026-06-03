@@ -59,17 +59,19 @@ export function ProductModal({ product, onClose }: { product: Product | null; on
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
               <a
                 href={`tel:${PHONE}`}
-                className="flex items-center justify-center gap-2 bg-[color:var(--brand-black)] hover:bg-black text-white text-sm font-bold uppercase tracking-wider py-3"
+                className="flex items-center justify-center gap-2 bg-[color:var(--brand-black)] hover:bg-black text-white text-xs font-bold uppercase tracking-wider py-3 px-3 whitespace-nowrap"
               >
-                <Phone size={16} /> Call to Order
+                <Phone size={16} className="shrink-0" />
+                <span>Call to Order</span>
               </a>
               <a
                 href={whatsappLink(product.name)}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-center gap-2 bg-[color:var(--brand-red)] hover:bg-[color:var(--brand-red-dark)] text-white text-sm font-bold uppercase tracking-wider py-3"
+                className="flex items-center justify-center gap-2 bg-[color:var(--brand-red)] hover:bg-[color:var(--brand-red-dark)] text-white text-xs font-bold uppercase tracking-wider py-3 px-3 whitespace-nowrap"
               >
-                <MessageCircle size={16} /> Enquire on WhatsApp
+                <MessageCircle size={16} className="shrink-0" />
+                <span>Enquire on WhatsApp</span>
               </a>
             </div>
           </div>
