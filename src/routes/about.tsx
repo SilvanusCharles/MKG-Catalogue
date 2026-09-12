@@ -5,7 +5,11 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About — MKG Kabel" },
-      { name: "description", content: "MKG Kabel is a professional electrical cable supplier in Lagos serving contractors and developers across Nigeria." },
+      {
+        name: "description",
+        content:
+          "MKG Kabel is a professional electrical cable supplier in Lagos serving contractors and developers across Nigeria.",
+      },
     ],
   }),
   component: About,
@@ -16,7 +20,9 @@ function About() {
     <>
       <section className="bg-[color:var(--brand-black)] text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-          <div className="text-xs font-bold uppercase tracking-widest text-[color:var(--brand-red)]">About</div>
+          <div className="text-xs font-bold uppercase tracking-widest text-[color:var(--brand-red)]">
+            About
+          </div>
           <h1 className="mt-2 font-display font-black text-4xl md:text-6xl uppercase max-w-3xl leading-[0.95]">
             Built for <span className="text-[color:var(--brand-red)]">professionals.</span>
           </h1>
@@ -26,19 +32,33 @@ function About() {
       <section className="bg-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16 space-y-6 text-base md:text-lg leading-relaxed">
           <p>
-            <strong>MKG Kabel</strong> is a professional electrical cable supplier serving contractors, electricians, and developers across Nigeria. From small residential jobs to large commercial projects, we provide the cables and accessories the country's tradespeople rely on every day.
+            <strong>MKG Kabel</strong> is a professional electrical cable supplier serving
+            contractors, electricians, and developers across Nigeria. From small residential jobs to
+            large commercial projects, we provide the cables and accessories the country's
+            tradespeople rely on every day.
           </p>
           <p>
-            Our products are <strong>made in Turkey</strong>, a recognised global hub for high-quality cable manufacturing. Sourcing directly from the factory ensures every cable, conduit and accessory we stock meets international quality standards — and reaches our customers at competitive bulk pricing.
+            Our products are <strong>made in Turkey</strong>, a recognised global hub for
+            high-quality cable manufacturing. Sourcing directly from the factory ensures every
+            cable, conduit and accessory we stock meets international quality standards — and
+            reaches our customers at competitive bulk pricing.
           </p>
           <p>
-            Based at <strong>185 Adeniji Adele Road, beside Wema Bank, Lagos Island, Lagos</strong>, we work with site teams, project managers, and bulk buyers nationwide. We don't sell hype — we sell dependable materials, with the technical specs you need to make confident decisions.
+            Based at <strong>185 Adeniji Adele Road, beside Wema Bank, Lagos Island, Lagos</strong>,
+            we work with site teams, project managers, and bulk buyers nationwide. We don't sell
+            hype — we sell dependable materials, with the technical specs you need to make confident
+            decisions.
           </p>
           <div className="border-l-4 border-[color:var(--brand-red)] pl-5 my-8 bg-muted py-5">
-            <h3 className="font-display font-bold uppercase tracking-wider text-sm">Sister Brand — Silver Gate</h3>
+            <h3 className="font-display font-bold uppercase tracking-wider text-sm">
+              Sister Brand — Silver Gate
+            </h3>
             <p className="mt-2 text-base">
               Looking for lighting fixtures and electrical fittings? Visit our sister brand{" "}
-              <a href="#" className="font-bold text-[color:var(--brand-red)] underline">Silver Gate</a> for a full range of complementary products.
+              <a href="#" className="font-bold text-[color:var(--brand-red)] underline">
+                Silver Gate
+              </a>{" "}
+              for a full range of complementary products.
             </p>
           </div>
         </div>
@@ -61,7 +81,10 @@ function About() {
           ))}
         </div>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16 text-center">
-          <Link to="/products" className="inline-block bg-[color:var(--brand-red)] hover:bg-[color:var(--brand-red-dark)] text-white px-8 py-4 font-bold uppercase tracking-wider text-sm">
+          <Link
+            to="/products"
+            className="inline-block bg-[color:var(--brand-red)] hover:bg-[color:var(--brand-red-dark)] text-white px-8 py-4 font-bold uppercase tracking-wider text-sm"
+          >
             Browse Catalogue
           </Link>
         </div>

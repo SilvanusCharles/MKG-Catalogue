@@ -21,7 +21,7 @@ const rowToProduct = (r: Row): Product => ({
   description: r.description,
   image_url: r.image_url,
   image_urls: Array.isArray(r.image_urls) ? r.image_urls : [],
-  specs: (r.specs && typeof r.specs === "object" ? (r.specs as Record<string, string>) : {}),
+  specs: r.specs && typeof r.specs === "object" ? (r.specs as Record<string, string>) : {},
 });
 
 export async function fetchProducts(): Promise<Product[]> {
@@ -33,7 +33,6 @@ export async function fetchProducts(): Promise<Product[]> {
   if (error) throw error;
   return (data as unknown as Row[]).map(rowToProduct);
 }
-
 
 export function useProducts() {
   const qc = useQueryClient();

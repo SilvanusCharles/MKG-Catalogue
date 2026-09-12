@@ -7,7 +7,11 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "MKG Kabel — Premium Cables & Conduit, Lagos" },
-      { name: "description", content: "Premium cables & conduit solutions. Trusted by contractors across Nigeria. Made in Turkey." },
+      {
+        name: "description",
+        content:
+          "Premium cables & conduit solutions. Trusted by contractors across Nigeria. Made in Turkey.",
+      },
     ],
   }),
   component: Home,
@@ -18,7 +22,12 @@ function Home() {
     <>
       {/* Hero */}
       <section className="bg-[color:var(--brand-black)] text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "repeating-linear-gradient(45deg, white 0 1px, transparent 1px 18px)" }} />
+        <div
+          className="absolute inset-0 opacity-[0.06]"
+          style={{
+            backgroundImage: "repeating-linear-gradient(45deg, white 0 1px, transparent 1px 18px)",
+          }}
+        />
         <div className="absolute top-0 right-0 w-2/5 h-full bg-[color:var(--brand-red)] opacity-20 [clip-path:polygon(40%_0,100%_0,100%_100%,0%_100%)] hidden md:block" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-32">
           <div className="max-w-3xl">
@@ -26,11 +35,13 @@ function Home() {
               <span className="w-2 h-2 bg-[color:var(--brand-red)]" /> Lagos Island · Nigeria
             </div>
             <h1 className="mt-6 font-display font-black text-5xl sm:text-6xl md:text-7xl leading-[0.95] uppercase">
-              Premium Cables<br />
+              Premium Cables
+              <br />
               <span className="text-[color:var(--brand-red)]">&</span> Conduit Solutions
             </h1>
             <p className="mt-6 text-base md:text-lg text-white/70 max-w-xl">
-              Trusted by contractors and electricians across Nigeria — made in Turkey to international standards.
+              Trusted by contractors and electricians across Nigeria — made in Turkey to
+              international standards.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -62,7 +73,9 @@ function Home() {
               <div className="bg-[color:var(--brand-black)] text-[color:var(--brand-red)] p-3">
                 <Icon size={24} />
               </div>
-              <span className="font-display font-bold text-lg uppercase tracking-wide">{label}</span>
+              <span className="font-display font-bold text-lg uppercase tracking-wide">
+                {label}
+              </span>
             </div>
           ))}
         </div>
@@ -73,10 +86,17 @@ function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
           <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
             <div>
-              <div className="text-xs font-bold uppercase tracking-widest text-[color:var(--brand-red)]">Catalogue</div>
-              <h2 className="mt-2 font-display font-black text-4xl md:text-5xl uppercase">Browse by Category</h2>
+              <div className="text-xs font-bold uppercase tracking-widest text-[color:var(--brand-red)]">
+                Catalogue
+              </div>
+              <h2 className="mt-2 font-display font-black text-4xl md:text-5xl uppercase">
+                Browse by Category
+              </h2>
             </div>
-            <Link to="/products" className="text-sm font-bold uppercase tracking-wider border-b-2 border-[color:var(--brand-red)] pb-0.5">
+            <Link
+              to="/products"
+              className="text-sm font-bold uppercase tracking-wider border-b-2 border-[color:var(--brand-red)] pb-0.5"
+            >
               See all products →
             </Link>
           </div>
@@ -91,7 +111,9 @@ function Home() {
                 <div className="bg-[color:var(--brand-black)] text-[color:var(--brand-red)] w-14 h-14 flex items-center justify-center group-hover:bg-[color:var(--brand-red)] group-hover:text-white transition-colors">
                   <CategoryIcon category={cat} size={28} />
                 </div>
-                <h3 className="mt-4 font-display font-bold text-xl uppercase leading-tight">{cat}</h3>
+                <h3 className="mt-4 font-display font-bold text-xl uppercase leading-tight">
+                  {cat}
+                </h3>
                 <div className="mt-3 text-xs font-bold uppercase tracking-wider text-muted-foreground group-hover:text-[color:var(--brand-red)]">
                   View Range →
                 </div>

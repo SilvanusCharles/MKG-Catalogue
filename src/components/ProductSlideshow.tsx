@@ -46,7 +46,10 @@ export function ProductSlideshow({
       />
       <button
         type="button"
-        onClick={(e) => { e.stopPropagation(); go(-1); }}
+        onClick={(e) => {
+          e.stopPropagation();
+          go(-1);
+        }}
         aria-label="Previous image"
         className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-[color:var(--brand-red)] text-white p-2"
       >
@@ -54,7 +57,10 @@ export function ProductSlideshow({
       </button>
       <button
         type="button"
-        onClick={(e) => { e.stopPropagation(); go(1); }}
+        onClick={(e) => {
+          e.stopPropagation();
+          go(1);
+        }}
         aria-label="Next image"
         className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-[color:var(--brand-red)] text-white p-2"
       >
@@ -66,7 +72,10 @@ export function ProductSlideshow({
             key={i}
             type="button"
             aria-label={`Go to image ${i + 1}`}
-            onClick={(e) => { e.stopPropagation(); setIdx(i); }}
+            onClick={(e) => {
+              e.stopPropagation();
+              setIdx(i);
+            }}
             className={`w-2 h-2 rounded-full transition-colors ${i === idx ? "bg-[color:var(--brand-red)]" : "bg-white/60 hover:bg-white"}`}
           />
         ))}
@@ -77,7 +86,10 @@ export function ProductSlideshow({
             <button
               key={src + i}
               type="button"
-              onClick={(e) => { e.stopPropagation(); setIdx(i); }}
+              onClick={(e) => {
+                e.stopPropagation();
+                setIdx(i);
+              }}
               className={`w-12 h-12 border-2 shrink-0 ${i === idx ? "border-[color:var(--brand-red)]" : "border-white/40"}`}
             >
               <img src={src} alt="" className="w-full h-full object-cover" />

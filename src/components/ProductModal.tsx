@@ -4,7 +4,13 @@ import type { Product } from "@/lib/catalogue";
 import { PHONE, whatsappLink } from "@/lib/catalogue";
 import { ProductSlideshow } from "./ProductSlideshow";
 
-export function ProductModal({ product, onClose }: { product: Product | null; onClose: () => void }) {
+export function ProductModal({
+  product,
+  onClose,
+}: {
+  product: Product | null;
+  onClose: () => void;
+}) {
   useEffect(() => {
     if (!product) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
@@ -19,7 +25,10 @@ export function ProductModal({ product, onClose }: { product: Product | null; on
   if (!product) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4 overflow-y-auto" onClick={onClose}>
+    <div
+      className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4 overflow-y-auto"
+      onClick={onClose}
+    >
       <div
         className="bg-white max-w-4xl w-full my-8 relative max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
@@ -42,9 +51,13 @@ export function ProductModal({ product, onClose }: { product: Product | null; on
               {product.category}
             </span>
             <h2 className="mt-3 font-display font-black text-3xl leading-tight">{product.name}</h2>
-            <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{product.description}</p>
+            <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+              {product.description}
+            </p>
 
-            <h3 className="mt-6 text-xs uppercase tracking-widest font-bold text-muted-foreground">Specifications</h3>
+            <h3 className="mt-6 text-xs uppercase tracking-widest font-bold text-muted-foreground">
+              Specifications
+            </h3>
             <table className="mt-2 w-full text-sm border-t border-border">
               <tbody>
                 {Object.entries(product.specs).map(([k, v]) => (

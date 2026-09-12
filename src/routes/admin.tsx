@@ -11,10 +11,7 @@ import { ProductImage } from "@/components/ProductImage";
 
 export const Route = createFileRoute("/admin")({
   head: () => ({
-    meta: [
-      { title: "Admin — MKG Kabel" },
-      { name: "robots", content: "noindex, nofollow" },
-    ],
+    meta: [{ title: "Admin — MKG Kabel" }, { name: "robots", content: "noindex, nofollow" }],
   }),
   component: AdminPage,
 });
@@ -69,7 +66,9 @@ function LoginView() {
   return (
     <section className="min-h-[80vh] bg-[color:var(--brand-black)] text-white flex items-center justify-center px-4 py-16">
       <div className="w-full max-w-md bg-white text-foreground p-8 border-t-4 border-[color:var(--brand-red)]">
-        <div className="text-xs font-bold uppercase tracking-widest text-[color:var(--brand-red)]">Admin Access</div>
+        <div className="text-xs font-bold uppercase tracking-widest text-[color:var(--brand-red)]">
+          Admin Access
+        </div>
         <h1 className="mt-2 font-display font-black text-3xl uppercase">
           {mode === "signin" ? "Sign In" : "Create Admin"}
         </h1>
@@ -114,7 +113,9 @@ function LoginView() {
           onClick={() => setMode(mode === "signin" ? "signup" : "signin")}
           className="mt-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground hover:text-[color:var(--brand-red)]"
         >
-          {mode === "signin" ? "Need to create the first admin?" : "Already have an account? Sign in"}
+          {mode === "signin"
+            ? "Need to create the first admin?"
+            : "Already have an account? Sign in"}
         </button>
       </div>
     </section>
@@ -160,7 +161,9 @@ const emptyDraft: ProductDraft = {
 };
 
 function specsToText(specs: Record<string, string>): string {
-  return Object.entries(specs).map(([k, v]) => `${k}: ${v}`).join("\n");
+  return Object.entries(specs)
+    .map(([k, v]) => `${k}: ${v}`)
+    .join("\n");
 }
 
 function textToSpecs(text: string): Record<string, string> {
@@ -223,8 +226,12 @@ function AdminDashboard() {
       <div className="bg-[color:var(--brand-black)] text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 flex items-center justify-between gap-4 flex-wrap">
           <div>
-            <div className="text-xs font-bold uppercase tracking-widest text-[color:var(--brand-red)]">Admin</div>
-            <h1 className="mt-1 font-display font-black text-3xl md:text-4xl uppercase">Manage Products</h1>
+            <div className="text-xs font-bold uppercase tracking-widest text-[color:var(--brand-red)]">
+              Admin
+            </div>
+            <h1 className="mt-1 font-display font-black text-3xl md:text-4xl uppercase">
+              Manage Products
+            </h1>
           </div>
           <div className="flex items-center gap-2">
             <button
@@ -264,9 +271,17 @@ function AdminDashboard() {
             </thead>
             <tbody>
               {isLoading ? (
-                <tr><td colSpan={4} className="p-8 text-center text-muted-foreground">Loading…</td></tr>
+                <tr>
+                  <td colSpan={4} className="p-8 text-center text-muted-foreground">
+                    Loading…
+                  </td>
+                </tr>
               ) : filtered.length === 0 ? (
-                <tr><td colSpan={4} className="p-8 text-center text-muted-foreground">No products.</td></tr>
+                <tr>
+                  <td colSpan={4} className="p-8 text-center text-muted-foreground">
+                    No products.
+                  </td>
+                </tr>
               ) : (
                 filtered.map((p) => (
                   <tr key={p.id} className="border-t border-border">
@@ -415,7 +430,10 @@ function ProductEditor({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/70 flex items-start sm:items-center justify-center p-4 overflow-y-auto" onClick={onClose}>
+    <div
+      className="fixed inset-0 z-50 bg-black/70 flex items-start sm:items-center justify-center p-4 overflow-y-auto"
+      onClick={onClose}
+    >
       <div
         className="bg-white max-w-3xl w-full my-8 relative max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
@@ -446,7 +464,9 @@ function ProductEditor({
                 className="w-full border border-border px-3 py-2.5 text-sm bg-white focus:outline-none focus:border-[color:var(--brand-red)]"
               >
                 {CATEGORIES.map((c) => (
-                  <option key={c} value={c}>{c}</option>
+                  <option key={c} value={c}>
+                    {c}
+                  </option>
                 ))}
               </select>
             </Field>
@@ -463,7 +483,9 @@ function ProductEditor({
 
           <Field label="Images (Slideshow)">
             <div className="space-y-3">
-              <label className={`inline-flex items-center gap-2 bg-[color:var(--brand-black)] hover:bg-black text-white px-4 py-2.5 text-sm font-bold uppercase tracking-wider cursor-pointer ${uploading ? "opacity-50 pointer-events-none" : ""}`}>
+              <label
+                className={`inline-flex items-center gap-2 bg-[color:var(--brand-black)] hover:bg-black text-white px-4 py-2.5 text-sm font-bold uppercase tracking-wider cursor-pointer ${uploading ? "opacity-50 pointer-events-none" : ""}`}
+              >
                 {uploading ? <Loader2 size={14} className="animate-spin" /> : <Upload size={14} />}
                 {uploading ? "Uploading…" : "Add Images from Device"}
                 <input
@@ -478,20 +500,29 @@ function ProductEditor({
                 />
               </label>
               <p className="text-xs text-muted-foreground">
-                Add one or more images — JPG, PNG or WebP, up to 5 MB each. The first image is the cover; drag the arrows to reorder. Leave blank to show a category icon.
+                Add one or more images — JPG, PNG or WebP, up to 5 MB each. The first image is the
+                cover; drag the arrows to reorder. Leave blank to show a category icon.
               </p>
 
               {form.images.length === 0 ? (
                 <div className="w-32 h-32 bg-[color:var(--brand-black)] relative overflow-hidden border border-border flex items-center justify-center">
-                  <ProductImage product={{ name: form.name, category: form.category, image_url: null }} size={48} />
+                  <ProductImage
+                    product={{ name: form.name, category: form.category, image_url: null }}
+                    size={48}
+                  />
                 </div>
               ) : (
                 <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
                   {form.images.map((url, i) => (
-                    <li key={url + i} className="relative group border border-border bg-[color:var(--brand-black)]">
+                    <li
+                      key={url + i}
+                      className="relative group border border-border bg-[color:var(--brand-black)]"
+                    >
                       <img src={url} alt="" className="w-full aspect-square object-cover" />
                       {i === 0 && (
-                        <span className="absolute top-1 left-1 bg-[color:var(--brand-red)] text-white text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5">Cover</span>
+                        <span className="absolute top-1 left-1 bg-[color:var(--brand-red)] text-white text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5">
+                          Cover
+                        </span>
                       )}
                       <div className="absolute inset-x-0 bottom-0 bg-black/70 flex items-center justify-between px-1 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
                         <div className="flex gap-1">
@@ -501,14 +532,18 @@ function ProductEditor({
                             onClick={() => moveImage(i, -1)}
                             className="text-white text-xs px-1.5 py-0.5 hover:bg-white/20 disabled:opacity-30"
                             aria-label="Move left"
-                          >‹</button>
+                          >
+                            ‹
+                          </button>
                           <button
                             type="button"
                             disabled={i === form.images.length - 1}
                             onClick={() => moveImage(i, 1)}
                             className="text-white text-xs px-1.5 py-0.5 hover:bg-white/20 disabled:opacity-30"
                             aria-label="Move right"
-                          >›</button>
+                          >
+                            ›
+                          </button>
                         </div>
                         <button
                           type="button"
@@ -534,7 +569,9 @@ function ProductEditor({
               placeholder={`Size / Gauge: 2.5mm²\nCores: 4\nVoltage Rating: 600/1000V`}
               className="w-full border border-border px-3 py-2.5 text-sm font-mono focus:outline-none focus:border-[color:var(--brand-red)]"
             />
-            <p className="text-xs text-muted-foreground mt-1">One per line, formatted <code>Key: Value</code>.</p>
+            <p className="text-xs text-muted-foreground mt-1">
+              One per line, formatted <code>Key: Value</code>.
+            </p>
           </Field>
 
           <div className="flex justify-end gap-2 pt-2 border-t border-border">

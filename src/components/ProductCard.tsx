@@ -1,8 +1,15 @@
 import { ProductSlideshow } from "./ProductSlideshow";
 import type { Product } from "@/lib/catalogue";
 
-export function ProductCard({ product, onView }: { product: Product; onView: (p: Product) => void }) {
-  const keySpec = product.specs["Size / Gauge"] ?? product.specs["Size"] ?? product.specs["Diameter"] ?? "—";
+export function ProductCard({
+  product,
+  onView,
+}: {
+  product: Product;
+  onView: (p: Product) => void;
+}) {
+  const keySpec =
+    product.specs["Size / Gauge"] ?? product.specs["Size"] ?? product.specs["Diameter"] ?? "—";
   return (
     <article className="group bg-card border border-border hover:border-[color:var(--brand-red)] transition-colors flex flex-col">
       <div className="aspect-square bg-[color:var(--brand-black)] relative overflow-hidden flex items-center justify-center">

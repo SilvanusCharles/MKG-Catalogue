@@ -25,8 +25,7 @@ export function ProductImage({
       <div
         className="absolute inset-0 opacity-10"
         style={{
-          backgroundImage:
-            "repeating-linear-gradient(45deg, white 0 1px, transparent 1px 12px)",
+          backgroundImage: "repeating-linear-gradient(45deg, white 0 1px, transparent 1px 12px)",
         }}
       />
       <CategoryIcon

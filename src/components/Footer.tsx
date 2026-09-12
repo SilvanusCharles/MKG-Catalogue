@@ -9,14 +9,18 @@ export function Footer() {
         <div>
           <Logo className="text-white" />
           <p className="mt-4 text-sm text-white/70 max-w-xs">
-            Professional cable & conduit supplier. Made in Turkey. 185 Adeniji Adele Road, beside Wema Bank, Lagos Island, Lagos.
+            Professional cable & conduit supplier. Made in Turkey. 185 Adeniji Adele Road, beside
+            Wema Bank, Lagos Island, Lagos.
           </p>
         </div>
 
         <div>
           <h4 className="text-xs uppercase tracking-widest text-white/50 font-bold">Contact</h4>
           <div className="mt-4 space-y-3">
-            <a href={`tel:${PHONE}`} className="flex items-center gap-2 text-sm hover:text-[color:var(--brand-red)]">
+            <a
+              href={`tel:${PHONE}`}
+              className="flex items-center gap-2 text-sm hover:text-[color:var(--brand-red)]"
+            >
               <Phone size={16} /> {PHONE_DISPLAY}
             </a>
             <a
@@ -31,10 +35,10 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="text-xs uppercase tracking-widest text-white/50 font-bold">Sister Brand</h4>
-          <p className="mt-4 text-sm text-white/70">
-            Looking for lighting & electrical fittings?
-          </p>
+          <h4 className="text-xs uppercase tracking-widest text-white/50 font-bold">
+            Sister Brand
+          </h4>
+          <p className="mt-4 text-sm text-white/70">Looking for lighting & electrical fittings?</p>
           <a
             href="#"
             className="mt-2 inline-block text-sm font-bold uppercase tracking-wider border-b-2 border-[color:var(--brand-red)] pb-0.5 hover:text-[color:var(--brand-red)]"
